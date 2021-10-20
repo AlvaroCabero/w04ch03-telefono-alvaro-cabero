@@ -1,0 +1,48 @@
+### APP
+
+- Renderizar todos los componentes
+- Almacena array con valores de input
+- Envía array a display
+- Función tiempo llamada
+- Función borrar
+- Función llamar
+  · bloquea teclado
+  ·Aparece info
+  · se activa botón colgar
+  -contador tiempo llamada
+  -Estado inicial
+
+### INFO
+
+- Recibe dato
+- Renderiza mensaje según dato (= condición)
+
+### DISPLAY
+
+- Recibe números individualemnte
+- Renderizar número recibido (max 9)
+
+### ACTIONS
+
+- Muestra botón recibido
+- Pasa texto a actions
+- Pasa clase a action
+- Pasas función
+
+### ACTION
+
+- Renderiza texto recibido
+- Recibe clase (active)
+- Recibe función
+
+### KEYBOARD
+
+- Renderiza cada Key
+- Envía texto a Key
+- Envía función a Key (según sea número vs Delete)
+- Recibe datos, (estado para activar/desactivar)
+
+### KEY
+
+- renderiza texto recibido
+- recibe función onclick
