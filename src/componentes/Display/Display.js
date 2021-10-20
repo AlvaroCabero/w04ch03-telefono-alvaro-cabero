@@ -5,9 +5,9 @@ const Display = ({ number, className }) => {
   const [telephone, setTelephone] = useState([]);
 
   if (telephone.length < 9) {
-    setTelephone(telephone.push(number));
+    setTelephone(telephone + number);
   }
-  return <span className={className}>{telephone.join("")}</span>;
+  return <span className={className}>{telephone}</span>;
 };
 
 Display.propTypes = {
