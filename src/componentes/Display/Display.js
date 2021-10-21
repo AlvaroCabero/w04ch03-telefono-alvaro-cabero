@@ -1,18 +1,12 @@
-import PropTypes from "prop-types";
-import { useState } from "react";
+// import PropTypes from "prop-types";
 
 const Display = ({ number, className }) => {
-  const [telephone, setTelephone] = useState([]);
-
-  if (telephone.length < 9) {
-    setTelephone(telephone + number);
-  }
-  return <span className={className}>{telephone}</span>;
+  return <span className={className}>{number}</span>;
 };
 
-Display.propTypes = {
-  number: PropTypes.number,
-  className: PropTypes.string,
-};
+// Display.propTypes = {
+//   number: PropTypes.array,
+//   className: PropTypes.string,
+// };
 
 export default Display;
