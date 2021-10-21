@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./App.css";
+import Actions from "./componentes/Actions/Actions";
 import Display from "./componentes/Display/Display";
 import Key from "./componentes/Key/Key";
 
@@ -36,16 +37,7 @@ function App() {
             ))}
           </ol>
         </div>
-        <div className="actions">
-          <Display number={number} className="number" />
-          <a href="a" className="call">
-            Call
-          </a>
-
-          <a href="b" className="hang active">
-            Hang
-          </a>
-        </div>
+        <Actions number={number} className="actions" />
       </main>
     </div>
   );
