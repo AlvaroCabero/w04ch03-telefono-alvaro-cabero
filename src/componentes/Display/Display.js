@@ -11,7 +11,7 @@ const Display = ({ number, className }) => {
 };
 
 Display.propTypes = {
-  number: PropTypes.string,
+  number: PropTypes.number,
   className: PropTypes.string,
 };
 
