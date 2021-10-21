@@ -7,12 +7,14 @@ function App() {
   const [number, setNumber] = useState([]);
   const keys = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0, "delete"];
 
-  const print = (event) => {
+  const printDisplay = (event) => {
     //console.log(event.target.textContent);
     if (event.target.className === "key" && number.length < 9) {
       setNumber(number + event.target.textContent);
       //number = key;
-      console.log(number);
+    }
+    if (event.target.className === "key big") {
+      setNumber("");
     }
   };
 
@@ -28,7 +30,7 @@ function App() {
                 className="key"
                 number={key}
                 actionOnClick={(event) => {
-                  print(event);
+                  printDisplay(event);
                 }}
               />
             ))}
