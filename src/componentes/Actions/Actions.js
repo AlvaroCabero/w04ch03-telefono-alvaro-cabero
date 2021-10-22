@@ -3,12 +3,15 @@ import Action from "../Action/Action";
 
 import Display from "../Display/Display";
 
-const Actions = ({ number, className }) => {
+const Actions = ({ number, callActive, className, numberOK }) => {
   return (
     <div className={className}>
-      <Display number={number} className="number">
-        <Action className="call" />
-      </Display>
+      <Display number={number} className="number" />
+      <Action
+        className={className}
+        callActive={callActive}
+        numberOK={numberOK}
+      />
     </div>
   );
 };

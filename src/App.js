@@ -1,12 +1,14 @@
 import { useState } from "react";
 import "./App.css";
 import Actions from "./componentes/Actions/Actions";
-import Display from "./componentes/Display/Display";
+
 import Key from "./componentes/Key/Key";
 
 function App() {
   const [number, setNumber] = useState([]);
   const keys = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0, "delete"];
+  const [telephone, setTelephone] = useState(false);
+  let callActive = false;
 
   const printDisplay = (event) => {
     //console.log(event.target.textContent);
@@ -16,8 +18,27 @@ function App() {
     }
     if (event.target.className === "key big") {
       setNumber("");
+      setTelephone(false);
+    }
+    if (number.length === 9) {
+      setTelephone(true);
     }
   };
+
+  const onCalling = (event) => {
+    event.preventDefault();
+    calling();
+  };
+
+  const calling = (event) => {
+    callActive = true;
+  };
+  //  const deleteGentlemanById = (id) => {
+  //    setGentlemen(gentlemen.filter((gentleman) => gentleman.id !== id));
+  //  };
+  // if (calling === true) {
+
+  // }
 
   return (
     <div className="container">
@@ -37,7 +58,15 @@ function App() {
             ))}
           </ol>
         </div>
-        <Actions number={number} className="actions" />
+        <Actions
+          number={number}
+          calling={callActive}
+          className="actions"
+          numberOK={telephone}
+          actionOnClick={(event) => {
+            onCalling(event);
+          }}
+        />
       </main>
     </div>
   );

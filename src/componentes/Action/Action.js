@@ -1,12 +1,15 @@
 // import PropTypes from "prop-types";
 
-const Action = ({ number, className }) => {
+const Action = ({ callActive, numberOK }) => {
   return (
     <>
-      <a href="a" className="call">
+      <a
+        href="a"
+        className={callActive ? "call off" : numberOK ? "call active" : "call"}
+      >
         Call
       </a>
-      <a href="b" className="hang active">
+      <a href="b" className={callActive ? "hang active" : "hang off"}>
         Hang
       </a>
     </>
