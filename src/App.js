@@ -20,12 +20,13 @@ function App() {
       setNumber("");
       setTelephone(false);
     }
-    if (number.length === 9) {
+    if (number.length === 8) {
       setTelephone(true);
     }
   };
   const hangUp = (event) => {
     setCallActive(false);
+    setNumber("");
   };
   const calling = (event) => {
     setCallActive(true);
