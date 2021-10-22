@@ -12,7 +12,7 @@ function App() {
 
   const printDisplay = (event) => {
     //console.log(event.target.textContent);
-    if (event.target.className === "key" && number.length < 9) {
+    if (event.target.className === "key" && number.length - 1 < 9) {
       setNumber(number + event.target.textContent);
       //number = key;
     }
@@ -20,12 +20,13 @@ function App() {
       setNumber("");
       setTelephone(false);
     }
-    if (number.length === 9) {
+    if (number.length === 8) {
       setTelephone(true);
     }
   };
   const hangUp = (event) => {
     setCallActive(false);
+    setNumber("");
   };
   const calling = (event) => {
     setCallActive(true);
