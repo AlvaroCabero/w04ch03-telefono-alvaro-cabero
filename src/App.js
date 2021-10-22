@@ -12,7 +12,7 @@ function App() {
 
   const printDisplay = (event) => {
     //console.log(event.target.textContent);
-    if (event.target.className === "key" && number.length - 1 < 9) {
+    if (event.target.className === "key" && number.length < 9) {
       setNumber(number + event.target.textContent);
       //number = key;
     }
@@ -20,16 +20,21 @@ function App() {
       setNumber("");
       setTelephone(false);
     }
-    if (number.length === 8) {
+    if (number.length >= 8) {
       setTelephone(true);
+    } else {
+      setTelephone(false);
     }
   };
   const hangUp = (event) => {
     setCallActive(false);
     setNumber("");
+    setTelephone(false);
   };
   const calling = (event) => {
-    setCallActive(true);
+    if (number.length >= 8) {
+      setCallActive(true);
+    }
   };
   //  const deleteGentlemanById = (id) => {
   //    setGentlemen(gentlemen.filter((gentleman) => gentleman.id !== id));
