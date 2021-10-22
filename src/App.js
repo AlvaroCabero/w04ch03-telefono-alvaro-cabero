@@ -24,7 +24,9 @@ function App() {
       setTelephone(true);
     }
   };
-
+  const hangUp = (event) => {
+    setCallActive(false);
+  };
   const calling = (event) => {
     setCallActive(true);
   };
@@ -36,7 +38,7 @@ function App() {
   // }
 
   return (
-    <ComponentContext.Provider value={{ calling, number }}>
+    <ComponentContext.Provider value={{ calling, hangUp }}>
       <div className="container">
         <span className="message">Calling...</span>
         <main className="phone">

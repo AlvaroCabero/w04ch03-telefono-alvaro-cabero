@@ -3,11 +3,15 @@ import { useContext } from "react";
 import ComponentContext from "../Context/Context";
 
 const Action = ({ callActive, numberOK }) => {
-  const { calling } = useContext(ComponentContext);
+  const { calling, hangUp } = useContext(ComponentContext);
 
   const onCalling = (event) => {
     event.preventDefault();
     calling();
+  };
+  const onHangUp = (event) => {
+    event.preventDefault();
+    hangUp();
   };
 
   return (
@@ -22,7 +26,7 @@ const Action = ({ callActive, numberOK }) => {
       <a
         href="b"
         className={callActive ? "hang active" : "hang off"}
-        onClick={onCalling}
+        onClick={onHangUp}
       >
         Hang
       </a>
