@@ -25,7 +25,7 @@
 ### ACTIONS
 
 - Muestra botón recibido
-- Pasa texto a actions
+- Pasa texto a action
 - Pasa clase a action
 - Pasas función
 
