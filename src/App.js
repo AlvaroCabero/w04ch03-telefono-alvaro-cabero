@@ -20,16 +20,21 @@ function App() {
       setNumber("");
       setTelephone(false);
     }
-    if (number.length === 8) {
+    if (number.length >= 8) {
       setTelephone(true);
+    } else {
+      setTelephone(false);
     }
   };
   const hangUp = (event) => {
     setCallActive(false);
     setNumber("");
+    setTelephone(false);
   };
   const calling = (event) => {
-    setCallActive(true);
+    if (number.length >= 8) {
+      setCallActive(true);
+    }
   };
   //  const deleteGentlemanById = (id) => {
   //    setGentlemen(gentlemen.filter((gentleman) => gentleman.id !== id));
